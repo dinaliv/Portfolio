@@ -2,8 +2,7 @@
 
 @import "tailwindcss";
 
-@theme {
-  --font-display: "Roboto Mono", sans-serif; 
+@theme{
+    --font-display: "Roboto Mono", sans-serif; 
 }
-
 
