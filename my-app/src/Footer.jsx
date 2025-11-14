@@ -1,6 +1,6 @@
 function Footer(){
     return(
-        <footer>
+        <footer class="font-display">
             <p>&copy; {new Date().getFullYear()} Diana Nalivaiko</p>
         </footer>
     );

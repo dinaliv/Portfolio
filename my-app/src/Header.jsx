@@ -1,7 +1,7 @@
 function Header(){
 
     return(
-        <header>
+        <header class="font-display">
             <h1>Diana Nalivaiko</h1>
             <nav>
                 <ul>
