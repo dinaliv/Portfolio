@@ -1,6 +1,6 @@
 // Factory.jsx
 import { Canvas, useLoader } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";   // ← correct
+import { OrbitControls } from "@react-three/drei";   
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 import { TextureLoader } from "three";
 
@@ -25,7 +25,7 @@ function FactoryModel() {
 export default function Factory() {
   return (
     <div className="w-full h-[500px]">
-      <Canvas camera={{ position: [3, 3, -5], fov: 50 }}>
+      <Canvas camera={{ position: [6, 6, -10], fov: 20 }}>
         <ambientLight intensity={0.8} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
 
