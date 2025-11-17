@@ -7,7 +7,7 @@ function Header(){
                 <ul className="flex justify-center gap-10 text-lg">
                     <li><a className="hover:opacity-70 transition" href="">3D</a></li>
                     <li><a className="hover:opacity-70 transition" href="">Traditional Art</a></li>
-                    <li><a className="hover:opacity-70 transition" href="">Photogtaphy</a></li>
+                
                 </ul>
             </nav>
         </header>
