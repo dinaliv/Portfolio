@@ -1,7 +1,8 @@
 import "./index.css"
 import Header from './Header'
 import Footer from './Footer'
-import Factory from "./Factory";
+import Factory from "./Factory"
+import Pond from "./Pond"
 
 function App() {
   
@@ -10,6 +11,7 @@ function App() {
     <>
       <Header></Header>
       <Factory></Factory>
+      <Pond></Pond>
       <Footer></Footer>
     </>
     
