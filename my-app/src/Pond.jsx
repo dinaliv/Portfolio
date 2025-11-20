@@ -83,7 +83,7 @@ function ModelPond() {
         })
     }, [obj, baseMap, emissiveMap, normalMap, aoTexture, specularMap])
 
-    return <primitive object={obj} scale={0.283} />
+    return <primitive object={obj} scale={0.61} />
 }
 
 export default function Pond(){
