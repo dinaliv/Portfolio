@@ -7,6 +7,7 @@ import { TextureLoader } from "three"
 import * as THREE from "three"
 import { useEffect } from "react" // Added useEffect hook
 
+
 function ModelPond() {
 
     const obj = useLoader(OBJLoader, "/pond/low_poly.obj")
@@ -103,12 +104,13 @@ export default function Pond(){
             
             <directionalLight 
               position={[5, 10, 5]} 
-              intensity={2.5} 
+              intensity={1.5} 
               castShadow 
               shadow-bias={-0.0005}
             />
             <OrbitControls />
             <ModelPond />
+           
         </Canvas>
     </div>
   )
