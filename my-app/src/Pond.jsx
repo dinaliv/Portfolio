@@ -8,6 +8,7 @@ import * as THREE from "three"
 import { EffectComposer, Bloom } from "@react-three/postprocessing"
 import { useEffect } from "react" // Added useEffect hook
 
+
 function ModelPond() {
 
     const obj = useLoader(OBJLoader, "/pond/low_poly.obj")
