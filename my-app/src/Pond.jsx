@@ -110,7 +110,8 @@ export default function Pond(){
               intensity={2.5} 
               color="#aaccff"
               castShadow 
-              shadow-bias={-0.0005}
+              shadow-bias={-0.001}
+              
               
             />
             
