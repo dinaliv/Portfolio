@@ -35,7 +35,7 @@ function ModelPond() {
   
     // Mipmaps were correct, but now we add Anisotropy for oblique angles
     baseMap.minFilter = THREE.LinearMipmapLinearFilter 
-  
+
     // *** ADDED: FIX TEXTURE WRAPPING MODE ***
     baseMap.wrapS = THREE.RepeatWrapping
     baseMap.wrapT = THREE.RepeatWrapping
@@ -58,14 +58,14 @@ function ModelPond() {
                     emissiveMap: emissiveMap,
                     emissive: new THREE.Color("#ffffff"), 
                     // INTENSITY IS KEY: Values > 1.0 combined with Bloom create the glow
-                    emissiveIntensity: 4.0,
+                    emissiveIntensity: 2.2,
           
                     // AMBIENT OCCLUSION
                     aoMap: aoTexture, 
                     aoMapIntensity: 1.0,
           
                     // For that stylized "clay" look on the rocks
-                    roughness: 0.4, 
+                    roughness: 0.42, 
                     metalness: 0.0,
           
                     
@@ -108,7 +108,7 @@ export default function Pond(){
             <directionalLight 
               position={[5, 10, 5]} 
               intensity={2.5} 
-              color="#aaccff"
+              color="#d2c0eb"
               castShadow 
               shadow-bias={-0.001}
               
@@ -116,27 +116,21 @@ export default function Pond(){
             />
             
             {/* 3. Fill Light: Soft backlight to separate rocks from background */}
-            <pointLight position={[-5, 5, -5]} intensity={10} color="#e3a0fa" distance={40} />
+            <pointLight position={[0.2, 0, 0.1]} intensity={1} color="#a864e3" distance={20} />
 
             <ModelPond />
 
             {/* --- POST PROCESSING --- */}
             <EffectComposer disableNormalPass>
                 <Bloom 
-                    luminanceThreshold={1.0} // Only glow things brighter than 1.0 (The emissive parts)
+                    luminanceThreshold={0.6} // Only glow things brighter than 1.0 (The emissive parts)
                     mipmapBlur // Makes the glow soft like the render
-                    intensity={1.5} // Strength of the glow
-                    radius={0.4} // How far the glow spreads
+                    intensity={1} // Strength of the glow
+                    radius={0.6} // How far the glow spreads
                 />
             </EffectComposer>
 
-            <ContactShadows 
-                resolution={1024} 
-                scale={10} 
-                blur={2} 
-                opacity={0.5} 
-                color="#000000" 
-            />
+            
         </Canvas>
     </div>
   )
