@@ -1,10 +1,11 @@
 // Pond.jsx
 import { Canvas } from "@react-three/fiber"
-import { OrbitControls, SoftShadows } from "@react-three/drei"
+import { OrbitControls, PerspectiveCamera, ContactShadows } from "@react-three/drei"
 import { useLoader } from "@react-three/fiber"
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js"
 import { TextureLoader } from "three"
 import * as THREE from "three"
+import { EffectComposer, Bloom } from "@react-three/postprocessing"
 import { useEffect } from "react" // Added useEffect hook
 
 
@@ -35,7 +36,7 @@ function ModelPond() {
   
     // Mipmaps were correct, but now we add Anisotropy for oblique angles
     baseMap.minFilter = THREE.LinearMipmapLinearFilter 
-  
+
     // *** ADDED: FIX TEXTURE WRAPPING MODE ***
     baseMap.wrapS = THREE.RepeatWrapping
     baseMap.wrapT = THREE.RepeatWrapping
@@ -46,13 +47,6 @@ function ModelPond() {
     aoTexture.channel = 1 // 0=R, 1=G, 2=B. Green is AO.
     aoTexture.needsUpdate = true
   
-    // 3. Roughness: Invert the Specular map (Smoothness) to become Roughness
-    // If the map is brighter=smoother, then Roughness = 1 - Smoothness.
-    // We use the `colorSpace` property to trigger the invertion on the GPU side.
-    // This is a common hack in Three.js for single-channel inversion.
-    specularMap.colorSpace = THREE.NoColorSpace 
-    specularMap.wrapS = THREE.RepeatWrapping;
-    specularMap.wrapT = THREE.RepeatWrapping;
 
     // --- MATERIAL APPLICATION ---
   
@@ -63,22 +57,19 @@ function ModelPond() {
                     map: baseMap,
                     normalMap: normalMap,
                     emissiveMap: emissiveMap,
+                    emissive: new THREE.Color("#ffffff"), 
+                    // INTENSITY IS KEY: Values > 1.0 combined with Bloom create the glow
+                    emissiveIntensity: 2.2,
           
                     // AMBIENT OCCLUSION
                     aoMap: aoTexture, 
                     aoMapIntensity: 1.0,
           
-                    // ROUGHNESS (inverted Specular map)
-                    // We apply the inversion by setting the map as the roughness map 
-                    // and using a custom map property for inversion in the shader (using roughnessMap's channel/map)
-                    roughnessMap: specularMap,
+                    // For that stylized "clay" look on the rocks
+                    roughness: 0.42, 
+                    metalness: 0.0,
           
-                    // METALNESS
-                    metalness: 0.0, // Always 0 for non-metal rock/water
-          
-                    // LIGHTING & MISC
-                    emissiveIntensity: 2.0, 
-                    transparent: true,
+                    
                     side: THREE.DoubleSide,
                 })
         
@@ -93,24 +84,54 @@ function ModelPond() {
         })
     }, [obj, baseMap, emissiveMap, normalMap, aoTexture, specularMap])
 
-    return <primitive object={obj} scale={0.283} />
+    return <primitive object={obj} scale={0.61} />
 }
 
 export default function Pond(){
   return (
     <div className="w-full h-[500px]">
-        <Canvas shadows camera={{ position: [5, 5, 5], fov: 35 }}>
-           
+        <Canvas 
+            shadows 
+            gl={{ 
+                toneMapping: THREE.ReinhardToneMapping, // Softens bright lights
+                toneMappingExposure: 1.5, // Brightens the scene slightly
+            }}
+        >
+            <PerspectiveCamera makeDefault position={[6, 6, 6]} fov={35} />
+            <OrbitControls makeDefault />
+
+            {/* --- LIGHTING SETUP (The "Night" Look) --- */}
             
+            {/* 1. Ambient Light: Purple/Blue to tint the shadows/rocks */}
+            <ambientLight intensity={0.8} color="#4c4c8a" />
+
+            {/* 2. Main Light: Cool Blue/Cyan moonlight */}
             <directionalLight 
               position={[5, 10, 5]} 
-              intensity={1.5} 
+              intensity={2.5} 
+              color="#d2c0eb"
               castShadow 
-              shadow-bias={-0.0005}
+              shadow-bias={-0.001}
+              
+              
             />
-            <OrbitControls />
+            
+            {/* 3. Fill Light: Soft backlight to separate rocks from background */}
+            <pointLight position={[0.2, 0, 0.1]} intensity={1} color="#a864e3" distance={20} />
+
             <ModelPond />
-           
+
+            {/* --- POST PROCESSING --- */}
+            <EffectComposer disableNormalPass>
+                <Bloom 
+                    luminanceThreshold={0.6} // Only glow things brighter than 1.0 (The emissive parts)
+                    mipmapBlur // Makes the glow soft like the render
+                    intensity={1} // Strength of the glow
+                    radius={0.6} // How far the glow spreads
+                />
+            </EffectComposer>
+
+            
         </Canvas>
     </div>
   )
