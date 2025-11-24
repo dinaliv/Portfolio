@@ -10,9 +10,11 @@ function App() {
   return (
     <>
       <Header></Header>
-      <main className="px-[10%] flex flex-col gap-10">
+      <main className="px-4 lg:px-[10%] flex flex-col gap-10">
+
         <Factory></Factory>
         <Pond></Pond>
+  
       </main>
       <Footer></Footer>
     </>

@@ -25,7 +25,7 @@ function FactoryModel() {
     }
   });
 
-  return <primitive object={obj} scale={0.15} />;
+  return <primitive object={obj} scale={0.2} />;
 }
 
 export default function Factory() {
