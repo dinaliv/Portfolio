@@ -3,6 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Factory from "./Factory"
 import Pond from "./Pond"
+import TradArt from "./Tradart"
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
 
         <Factory></Factory>
         <Pond></Pond>
+        <TradArt></TradArt>
   
       </main>
       <Footer></Footer>
