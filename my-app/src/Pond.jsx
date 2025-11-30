@@ -89,7 +89,7 @@ function ModelPond() {
 
 export default function Pond(){
   return (
-    <div className="w-full h-[500px]">
+    <div className="w-full h-[500px] cursor-grab active:cursor-grabbing">
         <Canvas 
             shadows 
             gl={{ 

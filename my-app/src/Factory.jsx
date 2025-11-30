@@ -30,7 +30,7 @@ function FactoryModel() {
 
 export default function Factory() {
   return (
-    <div className="w-full h-[500px]">
+    <div className="w-full h-[500px] cursor-grab active:cursor-grabbing">
       <Canvas 
         camera={{ position: [6, 6, -10], fov: 20 }}
         gl={{ outputColorSpace: THREE.SRGBColorSpace }} 

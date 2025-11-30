@@ -27,7 +27,7 @@ export default function TradArt() {
 
   return (
     <section id="traditional-art" className="w-full py-10">
-      <h2 className="font-display text-3xl text-center mb-12">Traditional Works</h2>
+      <h2 className="font-display text-3xl text-center mb-12">Traditional Art</h2>
       
       {/* Grid Layout: 1 column on mobile, 3 columns on medium screens and up */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
