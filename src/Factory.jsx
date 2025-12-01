@@ -5,10 +5,10 @@ import * as THREE from "three"
 
 function FactoryModel() {
   // Load OBJ model
-  const obj = useLoader(OBJLoader, "/factory/factory.obj");
+  const obj = useLoader(OBJLoader, "./factory/factory.obj");
 
   // Load texture
-  const texture = useLoader(THREE.TextureLoader, "/factory/factory_diffuse.png");
+  const texture = useLoader(THREE.TextureLoader, "./factory/factory_diffuse.png");
 
   texture.colorSpace = THREE.SRGBColorSpace;                 // correct colors
   texture.flipY = true;  

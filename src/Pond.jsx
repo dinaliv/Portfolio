@@ -11,7 +11,7 @@ import { useEffect } from "react" // Added useEffect hook
 
 function ModelPond() {
 
-    const obj = useLoader(OBJLoader, "/pond/low_poly.obj")
+    const obj = useLoader(OBJLoader, "./pond/low_poly.obj")
    
     // Load textures (Note: You are loading PNG and JPG/PNG, ensure file names match)
     const [
@@ -21,11 +21,11 @@ function ModelPond() {
         normalMap,
         specularMap // Using this for Roughness now
     ] = useLoader(TextureLoader, [
-        "/pond/pond_low_poly_BaseMap.png",    // Assuming PNG or JPG based on your files
-        "/pond/pond_low_poly_Emissive.png",
-        "/pond/pond_low_poly_MaskMap.png",
-        "/pond/pond_low_poly_Normal.png",
-        "/pond/pond_low_poly_Specular.png"
+        "./pond/pond_low_poly_BaseMap.png",    // Assuming PNG or JPG based on your files
+        "./pond/pond_low_poly_Emissive.png",
+        "./pond/pond_low_poly_MaskMap.png",
+        "./pond/pond_low_poly_Normal.png",
+        "./pond/pond_low_poly_Specular.png"
     ])
 
     // --- TEXTURE PRE-PROCESSING ---
