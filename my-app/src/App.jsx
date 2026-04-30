@@ -14,13 +14,15 @@ function App() {
     <>
       <Header></Header>
       <main className="px-4 lg:px-[10%] flex flex-col gap-20 mt-10">
-        <About />
+        
         {/* 3D Section: Wrapped in a div with an ID for the Header link */}
         <section id="3d-works" className="flex flex-col gap-10 scroll-mt-32">
             
             <Factory />
             <Pond />
         </section>
+
+        <About />
 
         {/* Traditional Art Section */}
         {/* The ID "traditional-art" is already inside the TradArt.jsx file */}
