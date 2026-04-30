@@ -4,6 +4,8 @@ import Footer from './Footer'
 import Factory from "./Factory"
 import Pond from "./Pond"
 import TradArt from "./Tradart"
+import About from "./About"
+
 
 function App() {
   
@@ -12,7 +14,7 @@ function App() {
     <>
       <Header></Header>
       <main className="px-4 lg:px-[10%] flex flex-col gap-20 mt-10">
-
+        <About />
         {/* 3D Section: Wrapped in a div with an ID for the Header link */}
         <section id="3d-works" className="flex flex-col gap-10 scroll-mt-32">
             
