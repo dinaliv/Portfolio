@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@0;1&display=swap');
 @import "tailwindcss";
 
+
 @theme{
-    --font-display: "Roboto Mono", sans-serif; 
+    --font-display: "Fredericka the Great", serif; 
+    --font-body: "IM Fell Double Pica", serif;
+
 }
 

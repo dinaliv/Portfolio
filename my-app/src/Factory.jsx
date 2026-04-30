@@ -30,18 +30,22 @@ function FactoryModel() {
 
 export default function Factory() {
   return (
-    <div className="w-full h-[500px] cursor-grab active:cursor-grabbing">
-      <Canvas 
-        camera={{ position: [6, 6, -10], fov: 20 }}
-        gl={{ outputColorSpace: THREE.SRGBColorSpace }} 
-      >
+    <div className="pb-8">
+      <div className="w-full h-[500px] cursor-grab active:cursor-grabbing">
+        <Canvas 
+          camera={{ position: [6, 6, -10], fov: 20 }}
+          gl={{ outputColorSpace: THREE.SRGBColorSpace }} 
+        >
         
 
-        <FactoryModel />
+          <FactoryModel />
 
-        <OrbitControls />
-      </Canvas>
+          <OrbitControls />
+        </Canvas>
+      </div>
+      <p className="font-body text-base text-neutral-400 text-center mt-2">Drag to rotate · Scroll to zoom</p>
     </div>
+    
   );
 }
 

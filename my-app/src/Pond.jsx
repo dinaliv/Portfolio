@@ -89,50 +89,54 @@ function ModelPond() {
 
 export default function Pond(){
   return (
-    <div className="w-full h-[500px] cursor-grab active:cursor-grabbing">
-        <Canvas 
-            shadows 
-            gl={{ 
-                toneMapping: THREE.ReinhardToneMapping, // Softens bright lights
-                toneMappingExposure: 1.5, // Brightens the scene slightly
-            }}
-        >
-            <PerspectiveCamera makeDefault position={[6, 6, 6]} fov={35} />
-            <OrbitControls makeDefault />
+    <div className="py-8">
+        <div className="w-full h-[500px] cursor-grab active:cursor-grabbing">
+            <Canvas 
+                shadows 
+                gl={{ 
+                    toneMapping: THREE.ReinhardToneMapping, // Softens bright lights
+                    toneMappingExposure: 1.5, // Brightens the scene slightly
+                }}
+            >
+                <PerspectiveCamera makeDefault position={[6, 6, 6]} fov={35} />
+                <OrbitControls makeDefault />
 
-            {/* --- LIGHTING SETUP (The "Night" Look) --- */}
+                {/* --- LIGHTING SETUP (The "Night" Look) --- */}
             
-            {/* 1. Ambient Light: Purple/Blue to tint the shadows/rocks */}
-            <ambientLight intensity={0.8} color="#4c4c8a" />
+                {/* 1. Ambient Light: Purple/Blue to tint the shadows/rocks */}
+                <ambientLight intensity={0.8} color="#4c4c8a" />
 
-            {/* 2. Main Light: Cool Blue/Cyan moonlight */}
-            <directionalLight 
-              position={[5, 10, 5]} 
-              intensity={2.5} 
-              color="#d2c0eb"
-              castShadow 
-              shadow-bias={-0.001}
+                {/* 2. Main Light: Cool Blue/Cyan moonlight */}
+                <directionalLight 
+                    position={[5, 10, 5]} 
+                    intensity={2.5} 
+                    color="#d2c0eb"
+                    castShadow 
+                    shadow-bias={-0.001}
               
               
-            />
-            
-            {/* 3. Fill Light: Soft backlight to separate rocks from background */}
-            <pointLight position={[0.2, 0, 0.1]} intensity={1} color="#a864e3" distance={20} />
-
-            <ModelPond />
-
-            {/* --- POST PROCESSING --- */}
-            <EffectComposer disableNormalPass>
-                <Bloom 
-                    luminanceThreshold={0.6} // Only glow things brighter than 1.0 (The emissive parts)
-                    mipmapBlur // Makes the glow soft like the render
-                    intensity={1} // Strength of the glow
-                    radius={0.6} // How far the glow spreads
                 />
-            </EffectComposer>
+            
+                {/* 3. Fill Light: Soft backlight to separate rocks from background */}
+                <pointLight position={[0.2, 0, 0.1]} intensity={1} color="#a864e3" distance={20} />
+
+                <ModelPond />
+
+                {/* --- POST PROCESSING --- */}
+                <EffectComposer disableNormalPass>
+                    <Bloom 
+                        luminanceThreshold={0.6} // Only glow things brighter than 1.0 (The emissive parts)
+                        mipmapBlur // Makes the glow soft like the render
+                        intensity={1} // Strength of the glow
+                        radius={0.6} // How far the glow spreads
+                    />
+                </EffectComposer>
 
             
-        </Canvas>
+            </Canvas>
+        </div>   
+        <p className="font-body text-base text-neutral-400 text-center mt-2">Drag to rotate · Scroll to zoom</p>
     </div>
+    
   )
 }
