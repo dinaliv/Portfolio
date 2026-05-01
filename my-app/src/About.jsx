@@ -18,14 +18,16 @@ export default function About() {
           In my free time, I'm usually exploring nature, reading, sketching, watching films or animation, or just enjoying a good coffee.
         </p>
       </div>
-
-      <a
+      {/* resume download button
+        <a
         href="/resume.pdf"
         download
         className="font-display self-start border border-neutral-800 px-6 py-3 hover:bg-neutral-800 hover:text-white transition"
       >
         Download Resume
       </a>
+      */}
+      
     </section>
   )
 }
