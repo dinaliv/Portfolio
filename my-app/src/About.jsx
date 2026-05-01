@@ -5,23 +5,17 @@ export default function About() {
 
       <div className="flex flex-col gap-5">
         <p className="font-body text-lg leading-relaxed text-neutral-700">
-          Hi there! I'm Diana, a third-year Interactive Arts and Technology student at SFU,
-          minoring in Computing Science. I recently completed my Associate's degree in Computer
-          Science, building a strong foundation in data structures, algorithms, linear algebra,
-          and mathematics.
+          Hi! I'm Diana, a third-year Interactive Arts and Technology student at SFU, minoring in Computing Science. I recently completed my Associate's degree in Computer Science, where I built a strong foundation in data structures, algorithms, linear algebra, and mathematics.
+
         </p>
         <p className="font-body text-lg leading-relaxed text-neutral-700">
-          Three Fiber. I'm also deeply passionate about art and 3D graphics, working proficiently
-          with tools like Blender, Maya, Substance Painter, 3DCoat, and ZBrush — with a
-          particular strength in hand-painted textures.
+          I work with C++, Java, JavaScript, React, and React Three Fiber. I’m also passionate about art and 3D graphics, with experience in Blender, Maya, Substance Painter, 3DCoat, and ZBrush, especially creating hand-painted textures. 
         </p>
         <p className="font-body text-lg leading-relaxed text-neutral-700">
-          I'm especially drawn to technical art roles, where creativity and code intersect.
-          Currently based in Vancouver, I'm actively looking for co-op or internship opportunities.
+          I'm most interested in technical art roles, where I can combine creativity and code. I'm based in Vancouver and currently looking for co-op or internship opportunities.
         </p>
         <p className="font-body text-lg leading-relaxed text-neutral-700">
-          Outside of work, you'll find me drinking coffee, exploring nature, drawing, reading,
-          or getting lost in films and animations.
+          In my free time, I'm usually exploring nature, reading, sketching, watching films or animation, or just enjoying a good coffee.
         </p>
       </div>
 
