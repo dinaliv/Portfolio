@@ -17,7 +17,7 @@ function App() {
         
         {/* 3D Section: Wrapped in a div with an ID for the Header link */}
         <section id="3d-works" className="flex flex-col gap-10 scroll-mt-32">
-            
+            <h2 className="font-display text-xl font-bold bg-[#ede8f5] px-3 py-1 self-start">3D Works</h2>
             <Factory />
             <Pond />
         </section>

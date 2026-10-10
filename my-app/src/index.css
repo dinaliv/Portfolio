@@ -1,12 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@0;1&display=swap');
 @import "tailwindcss";
 
+@font-face {
+    font-family: "Speak Pro";
+    src: url("./assets/fonts/SpeakPro.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Franklin Gothic";
+    src: url("./assets/fonts/ITCFranklinGothicStd-Book.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
 
 @theme{
-    --font-display: "Fredericka the Great", serif; 
-    --font-body: "IM Fell Double Pica", serif;
+    --font-display: "Speak Pro", sans-serif;
+    --font-body: "Franklin Gothic", sans-serif;
 
 }
 

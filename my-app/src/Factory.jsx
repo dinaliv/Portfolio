@@ -43,7 +43,7 @@ export default function Factory() {
           <OrbitControls />
         </Canvas>
       </div>
-      <p className="font-body text-base text-neutral-400 text-center mt-2">Drag to rotate · Scroll to zoom</p>
+      <p className="font-body text-sm text-neutral-400 text-center mt-2">Drag to rotate · Scroll to zoom</p>
     </div>
     
   );
