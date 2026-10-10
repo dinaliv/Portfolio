@@ -17,8 +17,7 @@ const projects = [
       { label: "GitHub", href: "https://github.com/kelsiei/stormhacks2026" },
       { label: "Devpost", href: "https://devpost.com/software/finkit-q0ivnj" },
     ],
-    video: "/fitkin-demo.mp4",
-    videoType: "mp4",
+    video: "https://www.youtube.com/embed/MUTxM895OD0",
   },
   {
     id: "coffee-shop",
@@ -108,22 +107,13 @@ export default function Programming() {
 
                   {project.video && (
                     <div className="aspect-video w-full">
-                      {project.videoType === "mp4" ? (
-                        <video
-                          src={project.video}
-                          className="w-full h-full"
-                          controls
-                          playsInline
-                        />
-                      ) : (
-                        <iframe
-                          src={project.video}
-                          title={`${project.title} demo`}
-                          className="w-full h-full"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        />
-                      )}
+                      <iframe
+                        src={project.video}
+                        title={`${project.title} demo`}
+                        className="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
                     </div>
                   )}
                 </div>
