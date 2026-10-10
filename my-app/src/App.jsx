@@ -5,6 +5,7 @@ import Factory from "./Factory"
 import Pond from "./Pond"
 import TradArt from "./Tradart"
 import About from "./About"
+import Programming from "./Programming"
 
 
 function App() {
@@ -22,11 +23,12 @@ function App() {
             <Pond />
         </section>
 
+        <Programming />
+
         <About />
 
-        {/* Traditional Art Section */}
-        {/* The ID "traditional-art" is already inside the TradArt.jsx file */}
-        <div className="scroll-mt-32"> 
+        {/* Traditional Art Section — hidden, kept for later */}
+        <div className="hidden scroll-mt-32">
            <TradArt />
         </div>
   
