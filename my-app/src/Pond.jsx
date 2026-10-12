@@ -6,7 +6,7 @@ import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js"
 import { TextureLoader } from "three"
 import * as THREE from "three"
 import { EffectComposer, Bloom } from "@react-three/postprocessing"
-import { useEffect } from "react" // Added useEffect hook
+import { useEffect, useState } from "react"
 
 
 function ModelPond() {
@@ -88,9 +88,61 @@ function ModelPond() {
 }
 
 export default function Pond(){
+  const [open, setOpen] = useState(false)
+
   return (
     <div className="py-8">
-        <div className="w-full h-[500px] cursor-grab active:cursor-grabbing">
+        <h3 className="font-display text-2xl mb-1">Mystic Pond</h3>
+        <p className="font-body text-sm mb-3">A personal project sculpted and modelled in Blender, with custom materials created in Adobe Substance 3D Painter to achieve a glowing water effect.</p>
+        <div className="flex flex-wrap gap-2 mb-3">
+          {["Blender", "Adobe Substance 3D Painter", "High-to-Low Baking"].map((t) => (
+            <span key={t} className="font-body text-xs bg-[#ede8f5] px-2 py-0.5">{t}</span>
+          ))}
+        </div>
+
+        <button
+          onClick={() => setOpen((prev) => !prev)}
+          className="font-display text-xs text-neutral-400 hover:text-neutral-700 transition mb-4"
+        >
+          {open ? "▲ Show less" : "▼ Show more"}
+        </button>
+
+        {open && (
+          <div className="flex flex-col gap-6 mb-6 border-b border-neutral-100 pb-6">
+            <p className="font-body text-sm leading-relaxed text-neutral-600">
+              The key challenge was achieving the glowing water effect. The water and stone materials were built from scratch in Adobe Substance 3D Painter. Both the rocks and the water surface were first sculpted in high poly in Blender, then baked onto a low-poly mesh.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="flex flex-col gap-2">
+                <img
+                  src={`${import.meta.env.BASE_URL}pond-concept.jpg`}
+                  alt="Concept art"
+                  className="w-full h-auto object-contain rounded-sm"
+                />
+                <p className="font-body text-xs text-neutral-400 text-center">Concept art</p>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <div className="w-full aspect-video bg-neutral-100 flex items-center justify-center rounded-sm">
+                  <span className="font-body text-xs text-neutral-300">Sculpt — coming soon</span>
+                </div>
+                <p className="font-body text-xs text-neutral-400 text-center">High poly sculpt</p>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <img
+                  src={`${import.meta.env.BASE_URL}pond-render.jpg`}
+                  alt="Final render"
+                  className="w-full h-auto object-contain rounded-sm"
+                />
+                <p className="font-body text-xs text-neutral-400 text-center">Final render</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="w-full h-[400px] cursor-grab active:cursor-grabbing">
             <Canvas 
                 shadows 
                 gl={{ 
@@ -99,7 +151,7 @@ export default function Pond(){
                 }}
             >
                 <PerspectiveCamera makeDefault position={[6, 6, 6]} fov={35} />
-                <OrbitControls makeDefault />
+                <OrbitControls makeDefault enableZoom={false} />
 
                 {/* --- LIGHTING SETUP (The "Night" Look) --- */}
             
@@ -135,7 +187,7 @@ export default function Pond(){
             
             </Canvas>
         </div>   
-        <p className="font-body text-sm text-neutral-400 text-center mt-2">Drag to rotate · Scroll to zoom</p>
+        <p className="font-body text-sm text-neutral-400 text-center mt-2">Drag to rotate</p>
     </div>
     
   )
