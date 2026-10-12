@@ -113,7 +113,7 @@ export default function Pond(){
               The key challenge was achieving the glowing water effect. The water and stone materials were built from scratch in Adobe Substance 3D Painter. Both the rocks and the water surface were first sculpted in high poly in Blender, then baked onto a low-poly mesh.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
                 <img
                   src={`${import.meta.env.BASE_URL}pond-concept.jpg`}
