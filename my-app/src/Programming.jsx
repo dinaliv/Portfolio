@@ -81,7 +81,7 @@ export default function Programming() {
 
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((t) => (
-                    <span key={t} className="font-body text-xs bg-[#ede8f5] px-2 py-0.5">{t}</span>
+                    <span key={t} className="font-body text-xs bg-[#ede8f5] px-2 py-1">{t}</span>
                   ))}
                 </div>
 

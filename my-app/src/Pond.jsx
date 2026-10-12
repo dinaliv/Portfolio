@@ -96,7 +96,7 @@ export default function Pond(){
         <p className="font-body text-sm mb-3">A personal project sculpted and modelled in Blender, with custom materials created in Adobe Substance 3D Painter to achieve a glowing water effect.</p>
         <div className="flex flex-wrap gap-2 mb-3">
           {["Blender", "Adobe Substance 3D Painter", "High-to-Low Baking"].map((t) => (
-            <span key={t} className="font-body text-xs bg-[#ede8f5] px-2 py-0.5">{t}</span>
+            <span key={t} className="font-body text-xs bg-[#ede8f5] px-2 py-1">{t}</span>
           ))}
         </div>
 

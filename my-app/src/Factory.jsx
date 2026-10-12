@@ -33,7 +33,7 @@ export default function Factory() {
       <p className="font-body text-sm mb-3">A personal project modelled in Blender and hand-painted in 3DCoat, inspired by concept art by Ben Marquardt.</p>
       <div className="flex flex-wrap gap-2 mb-3">
         {["Blender", "3DCoat", "Hand-Painted Textures"].map((t) => (
-          <span key={t} className="font-body text-xs bg-[#ede8f5] px-2 py-0.5">{t}</span>
+          <span key={t} className="font-body text-xs bg-[#ede8f5] px-2 py-1">{t}</span>
         ))}
       </div>
 
