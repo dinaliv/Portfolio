@@ -21,7 +21,7 @@ function Footer(){
                     GitHub
                 </a>
                 <a 
-                    href="mailto:diana.nalivaiko@sfu.ca" 
+                    href="mailto:diana_nalivaiko@sfu.ca" 
                     className="hover:opacity-70 transition"
                 >
                     Email
