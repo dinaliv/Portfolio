@@ -28,6 +28,15 @@ function Footer(){
                 </a>
             </div>
 
+            {/* Resume Download */}
+            <a
+                href={`${import.meta.env.BASE_URL}resume.pdf`}
+                download="Diana_Nalivaiko_Resume.pdf"
+                className="inline-block border border-neutral-800 px-6 py-2 text-sm hover:bg-neutral-800 hover:text-white transition mb-8"
+            >
+                Download Resume
+            </a>
+
             {/* Copyright */}
             <p className="text-neutral-500 text-sm">
                 &copy; {new Date().getFullYear()} Diana Nalivaiko

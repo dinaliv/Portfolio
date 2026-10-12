@@ -5,17 +5,16 @@ export default function About() {
 
       <div className="flex flex-col gap-5">
         <p className="font-body text-sm leading-relaxed text-neutral-700">
-          Hi! I'm Diana, a third-year Interactive Arts and Technology student at SFU, minoring in Computing Science. I recently completed my Associate's degree in Computer Science, where I built a strong foundation in data structures, algorithms, linear algebra, and mathematics.
-
+          Hi! I’m Diana, a third-year student at SFU studying Interactive Arts and Technology. I recently completed an Associate of Science degree in Computer Science, where I developed a strong foundation in data structures, algorithms, linear algebra, and mathematics.
         </p>
         <p className="font-body text-sm leading-relaxed text-neutral-700">
-          I work with C++, Java, JavaScript, React, and React Three Fiber. I’m also passionate about art and 3D graphics, with experience in Blender, Maya, Substance Painter, 3DCoat, and ZBrush, especially creating hand-painted textures. 
+          I work with C++, Python, Java, JavaScript, React, and React Three Fiber. Alongside programming, I’m passionate about art and 3D graphics, with experience in Blender, Maya, Substance 3D Painter, 3DCoat, and ZBrush. My particular strength is creating hand-painted textures for 3D models.
         </p>
         <p className="font-body text-sm leading-relaxed text-neutral-700">
-          I'm most interested in technical art roles, where I can combine creativity and code. I'm based in Vancouver and currently looking for co-op or internship opportunities.
+          I’m especially interested in technical art roles that bring together programming and visual creativity. Based in Vancouver, I’m currently looking for co-op and internship opportunities where I can continue developing my skills and contribute to creative, technical projects.
         </p>
         <p className="font-body text-sm leading-relaxed text-neutral-700">
-          In my free time, I'm usually exploring nature, reading, sketching, watching films or animation, or just enjoying a good coffee.
+          Outside of school and work, I enjoy exploring nature, reading, sketching, watching films and finding a good coffee spot.
         </p>
       </div>
       {/* resume download button
