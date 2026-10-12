@@ -61,9 +61,11 @@ export default function Factory() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <div className="w-full aspect-square bg-neutral-100 flex items-center justify-center rounded-sm">
-                <span className="font-body text-xs text-neutral-300">Wireframe — coming soon</span>
-              </div>
+              <img
+                src={`${import.meta.env.BASE_URL}factory-wireframe.png`}
+                alt="Wireframe view"
+                className="w-full h-auto object-contain rounded-sm"
+              />
               <p className="font-body text-xs text-neutral-400 text-center">Wireframe view</p>
             </div>
           </div>

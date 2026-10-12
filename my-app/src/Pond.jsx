@@ -123,14 +123,7 @@ export default function Pond(){
                 <p className="font-body text-xs text-neutral-400 text-center">Concept art</p>
               </div>
 
-              <div className="flex flex-col gap-2">
-                <div className="w-full aspect-video bg-neutral-100 flex items-center justify-center rounded-sm">
-                  <span className="font-body text-xs text-neutral-300">Sculpt — coming soon</span>
-                </div>
-                <p className="font-body text-xs text-neutral-400 text-center">High poly sculpt</p>
-              </div>
-
-              <div className="flex flex-col gap-2">
+<div className="flex flex-col gap-2">
                 <img
                   src={`${import.meta.env.BASE_URL}pond-render.jpg`}
                   alt="Final render"
