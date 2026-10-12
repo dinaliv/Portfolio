@@ -4,9 +4,10 @@ const projects = [
   {
     id: "fitkin",
     title: "Fitkin",
-    subtitle: "StormHacks 2026 · Hackathon",
+    subtitle: "StormHacks 2026 · 24-hour Hackathon",
     image: `${import.meta.env.BASE_URL}fitkin-preview.jpg`,
     summary: "A group wellness web app where users complete daily tasks to earn EXP and coins. Levelling up unlocks items in a shop where coins are spent on cosmetics that appear directly on a 3D otter mascot in real time.",
+    contributionsLabel: "My Contributions",
     contributions: [
       "Created and textured the otter mascot character in Blender, exported as GLB",
       "Integrated the 3D otter model into the React web app using Three.js",
@@ -24,8 +25,9 @@ const projects = [
     id: "coffee-shop",
     title: "Diana's Coffee Shop",
     subtitle: "IAT 265: Multimedia Programming for Art and Design · Solo",
-    image: null,
+    image: `${import.meta.env.BASE_URL}coffee-shop-preview.png`,
     summary: "A Java desktop barista simulator where players manage a coffee shop — taking orders and crafting drinks through a fully custom-illustrated interactive GUI.",
+    contributionsLabel: "Project Highlights",
     contributions: [
       "Designed the game concept, user interface, and all custom visual assets",
       "Built the game in Java using Swing for the interactive GUI",
@@ -36,7 +38,7 @@ const projects = [
     links: [
       { label: "GitHub", href: "https://github.com/dinaliv/Diana-s-Coffee-Shop" },
     ],
-    video: "https://www.youtube.com/embed/YOUR_VIDEO_ID",
+    video: "https://www.youtube.com/embed/IMyy-_CTd28",
   },
 ]
 
@@ -55,16 +57,16 @@ export default function Programming() {
           return (
             <div key={project.id} className="border border-neutral-200 flex flex-col">
 
-              {/* Square image */}
-              <div className="aspect-square w-full bg-neutral-100 overflow-hidden">
+              {/* Preview image */}
+              <div className="w-full bg-neutral-100 overflow-hidden">
                 {project.image ? (
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto object-contain"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-neutral-300 font-body text-sm">
+                  <div className="w-full min-h-48 flex items-center justify-center text-neutral-300 font-body text-sm">
                     No image yet
                   </div>
                 )}
@@ -98,7 +100,7 @@ export default function Programming() {
               {isOpen && (
                 <div className="flex flex-col gap-4 px-5 pb-5 border-t border-neutral-100 pt-4">
                   <div className="flex flex-col gap-1">
-                    <h4 className="font-display text-sm font-bold">My Contributions</h4>
+                    <h4 className="font-display text-sm font-bold bg-[#ede8f5] px-3 py-1 self-start">{project.contributionsLabel}</h4>
                     <ul className="flex flex-col gap-1">
                       {project.contributions.map((c, i) => (
                         <li key={i} className="font-body text-sm text-neutral-700 leading-relaxed list-disc list-inside">
